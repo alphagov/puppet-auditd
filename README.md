@@ -1,8 +1,19 @@
-# Puppet Module: Audit
+# auditd
 
 This module contains configurations for auditd, which helps to write
 audit records to the disk in form of logs. One can looks at these logs
 using ausearch and aureport utilities.
+
+## Example usage
+
+Include with default parameters:
+```
+include auditd
+```
+
+## License
+
+See [LICENSE](LICENSE) file.
 
 ## Auditd Keys
 
