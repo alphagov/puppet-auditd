@@ -1,22 +1,16 @@
+# == Class: auditd
+#
+# Sets up auditd with a set of rules.
+#
 class auditd {
 
-  anchor { 'auditd::begin':
-    before => Class['auditd::package'],
-    notify => Class['auditd::service'];
-  }
+  anchor { 'auditd::begin': } ->
+  class { 'auditd::package': } ->
+  class { 'auditd::config': }
+  class { 'auditd::service': } ->
+  anchor { 'auditd::end': }
 
-  class { 'auditd::package':
-    notify => Class['auditd::service'];
-  }
-
-  class { 'auditd::config':
-    require => Class['auditd::package'],
-    notify  => Class['auditd::service'];
-  }
-
-  class { 'auditd::service': }
-
-  anchor { 'auditd::end':
-    require => Class['auditd::service'],
-  }
+  Anchor['auditd::begin']  ~> Class['auditd::service']
+  Class['auditd::package'] ~> Class['auditd::service']
+  Class['auditd::config']  ~> Class['auditd::service']
 }
