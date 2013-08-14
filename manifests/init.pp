@@ -4,6 +4,10 @@
 #
 class auditd {
 
+  if ($::osfamily != 'Debian') {
+    fail("${::operatingsystem} not supported")
+  }
+
   anchor { 'auditd::begin': } ->
   class { 'auditd::package': } ->
   class { 'auditd::config': }

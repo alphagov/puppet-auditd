@@ -1,3 +1,7 @@
+# == Class: auditd::config
+#
+#  This class shouldn't be called directly
+#
 class auditd::config {
   file { '/etc/audit/audit.rules':
     ensure  => file,
