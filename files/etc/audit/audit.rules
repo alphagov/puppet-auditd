@@ -109,7 +109,7 @@
 -w /etc/security/namespace.conf -p wa -k pam
 -w /etc/security/namespace.init -p wa -k pam
 
-## GDS specific secrets
+## Puppet SSL
 -w /etc/puppet/ssl -p wa -k puppet_ssl
 
 ## postfix configuration
