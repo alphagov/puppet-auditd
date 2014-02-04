@@ -154,5 +154,7 @@
 -w /sbin/reboot -p x -k power
 -w /sbin/halt -p x -k power
 
+<% if $immutable %>
 ## Make the configuration immutable
-#-e 2
+-e 2
+<% end %>

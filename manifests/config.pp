@@ -2,10 +2,12 @@
 #
 #  This class shouldn't be called directly
 #
-class auditd::config {
+class auditd::config(
+  $immutable => undef,
+) {
   file { '/etc/audit/audit.rules':
     ensure  => file,
-    source  => 'puppet:///modules/auditd/etc/audit/audit.rules',
+    content => template('auditd/audit.rules.erb'),
     mode    => '0600',
     owner   => 'root',
     group   => 'root',

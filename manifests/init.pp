@@ -2,7 +2,9 @@
 #
 # Sets up auditd with a set of rules.
 #
-class auditd {
+class auditd (
+  $immutable => true,
+) {
 
   if ($::osfamily != 'Debian') {
     fail("${::operatingsystem} not supported")
@@ -10,7 +12,9 @@ class auditd {
 
   anchor { 'auditd::begin': } ->
   class { 'auditd::package': } ->
-  class { 'auditd::config': }
+  class { 'auditd::config':
+    immutable => $immutable,
+  }
   class { 'auditd::service': } ->
   anchor { 'auditd::end': }
 
