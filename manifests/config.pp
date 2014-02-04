@@ -4,7 +4,15 @@
 #
 class auditd::config(
   $immutable = undef,
+  $halt      = undef,
 ) {
+
+  if $halt {
+    $failure_mode = 2
+  } else {
+    $failure_mode = 1
+  }
+
   file { '/etc/audit/audit.rules':
     ensure  => file,
     content => template('auditd/audit.rules.erb'),

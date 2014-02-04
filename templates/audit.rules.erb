@@ -11,7 +11,7 @@
 ## Failure Mode
 ## Possible values are 0 (silent), 1 (printk, print a failure message),
 ## and 2 (panic, halt the system).  
--f 1
+-f <%= @failure_mode %>
 
 ## Audit the audit logs. 
 ## successful and unsuccessful attempts to read information from the
@@ -154,7 +154,7 @@
 -w /sbin/reboot -p x -k power
 -w /sbin/halt -p x -k power
 
-<% if @immutable %>
+<% if @immutable -%>
 ## Make the configuration immutable
 -e 2
-<% end %>
+<% end -%>

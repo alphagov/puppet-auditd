@@ -3,7 +3,8 @@
 # Sets up auditd with a set of rules.
 #
 class auditd (
-  $immutable = true,
+  $immutable                     = true,
+  $halt_machine_on_audit_failure = false,
 ) {
 
   if ($::osfamily != 'Debian') {
@@ -14,6 +15,7 @@ class auditd (
   class { 'auditd::package': } ->
   class { 'auditd::config':
     immutable => $immutable,
+    halt      => $halt_machine_on_audit_failure,
   }
   class { 'auditd::service': } ->
   anchor { 'auditd::end': }
