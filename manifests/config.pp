@@ -3,7 +3,7 @@
 #  This class shouldn't be called directly
 #
 class auditd::config(
-  $immutable => undef,
+  $immutable = undef,
 ) {
   file { '/etc/audit/audit.rules':
     ensure  => file,

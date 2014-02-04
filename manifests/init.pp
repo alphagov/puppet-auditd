@@ -3,7 +3,7 @@
 # Sets up auditd with a set of rules.
 #
 class auditd (
-  $immutable => true,
+  $immutable = true,
 ) {
 
   if ($::osfamily != 'Debian') {
