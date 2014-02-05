@@ -27,13 +27,12 @@ class auditd::config(
     order   => '01'
   }
 
-  if $immutable {
-    concat::fragment{ 'auditd_rules_end':
-      target  => $rules_file,
-      content => "\n## Make the configuration immutable\n-e 2",
-      order   => '99'
-    }
+  concat::fragment{ 'auditd_rules_end':
+    target  => $rules_file,
+    content => template('auditd/audit.rules.end.fragment.erb'),
+    order   => '99'
   }
+ 
 
   file { '/etc/audit/auditd.conf':
     ensure  => file,
