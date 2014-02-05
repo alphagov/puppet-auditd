@@ -7,6 +7,7 @@ define auditd::rule($content="", $order=10) {
 
   concat::fragment{ "auditd_fragment_$name":
     target  => $auditd::config::rules_file,
-    content => $body
+    order   => $order,
+    content => $body,
   }
 }
