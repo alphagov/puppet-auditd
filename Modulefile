@@ -7,4 +7,4 @@ summary       'Manage auditd for Ubuntu'
 project_page  'https://github.com/gds-operations/puppet-auditd'
 
 dependency 'puppetlabs/stdlib', '>= 3.0.0'
-dependency 'puppetlabs/concat'
+dependency 'puppetlabs/concat', '>=1.0.0'
