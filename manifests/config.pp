@@ -55,11 +55,10 @@ class auditd::config(
     content => template('auditd/audit.rules.end.fragment.erb'),
     order   => '99'
   }
- 
 
   file { '/etc/audit/auditd.conf':
     ensure  => file,
-    content  => template('auditd/auditd.conf.erb'),
+    content => template('auditd/auditd.conf.erb'),
     mode    => '0600',
     owner   => 'root',
     group   => 'root',

@@ -7,6 +7,7 @@ describe 'auditd' do
         let(:params) {{ }}
         let(:facts) {{
           :osfamily => osfamily,
+          :concat_basedir => '/var/lib/puppet/concat',
         }}
 
         it { should contain_class('auditd::package') }
@@ -21,6 +22,7 @@ describe 'auditd' do
       let(:facts) {{
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
+        :concat_basedir  => '/var/lib/puppet/concat',
       }}
 
       it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
