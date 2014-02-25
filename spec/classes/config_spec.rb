@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe 'auditd::config' do
 
+  let(:facts) {{ :concat_basedir => '/var/lib/puppet/concat/'}}
+
   it { 
     should contain_file('/etc/audit/audit.rules').with(
       :mode  => '0600',
