@@ -55,14 +55,14 @@ class auditd::config(
     content => template('auditd/audit.rules.end.fragment.erb'),
     order   => '99'
   }
- 
+
 
   file { '/etc/audit/auditd.conf':
-    ensure  => file,
+    ensure   => file,
     content  => template('auditd/auditd.conf.erb'),
-    mode    => '0600',
-    owner   => 'root',
-    group   => 'root',
+    mode     => '0600',
+    owner    => 'root',
+    group    => 'root',
   }
   file { '/etc/audisp/plugins.d/syslog.conf':
     ensure  => file,
