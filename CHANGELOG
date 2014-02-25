@@ -1,2 +1,8 @@
+2014-02-25 Release 0.1.0
+- Add the ability to drop configuration fragments.
+- Make auditd.conf a configurable template.
+- feature flag immutabality (default true)
+- feature flag panicing on auditd rule failure (default false)
+
 2013-08-15 Release 0.0.1
 - Initial release
