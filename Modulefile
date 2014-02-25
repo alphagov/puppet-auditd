@@ -1,5 +1,5 @@
 name          'gdsoperations-auditd'
-version       '0.1.0'
+version       '0.1.1'
 source        'https://github.com/gds-operations/puppet-auditd'
 author        'Government Digital Service'
 license       'MIT'

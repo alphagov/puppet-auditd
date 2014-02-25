@@ -1,3 +1,6 @@
+2014-02-25 Release 0.1.1
+- add a Changelog entry for 0.1.0 release.
+
 2014-02-25 Release 0.1.0
 - Add the ability to drop configuration fragments.
 - Make auditd.conf a configurable template.
