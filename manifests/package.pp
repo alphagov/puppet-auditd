@@ -7,11 +7,11 @@ class auditd::package {
     ensure => installed
   }
 
-  $pkgname = $lsbdistrelease ? {
+  $pkgname = $::lsbdistrelease ? {
     '12.04' => 'libaudit0',
     default => 'libaudit1',
   }
-  package { "$pkgname":
+  package { $pkgname:
     ensure => installed
   }
   package { 'audispd-plugins':
