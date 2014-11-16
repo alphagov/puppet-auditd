@@ -2,10 +2,11 @@ require 'spec_helper'
 
 describe 'auditd::package' do
   context "default" do
-    let (:facts) {{ :lsbdistcodename => 'saucy' }}
-    it { should contain_package('auditd') }
-    it { should contain_package('libaudit1') }
-    it { should contain_package('audispd-plugins') }
+    let (:facts) {{
+        :osfamily        => 'Solaris',
+        :operatingsystem => 'Nexenta',
+    }}
+    it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
   end
   context "ubuntu lucid" do
     let (:facts) {{ :lsbdistcodename => 'lucid' }}
