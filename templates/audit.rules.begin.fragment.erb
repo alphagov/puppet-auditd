@@ -34,10 +34,10 @@
 -w /etc/apparmor.d/ -p wa -k apparmor
 
 # Monitor usage of AppArmor tools.
--w /sbin/apparmor_parser -p x -k apparmor
--w /usr/sbin/aa-complain -p x -k apparmor
--w /usr/sbin/aa-disable -p x -k apparmor
--w /usr/sbin/aa-enforce -p x -k apparmor
+-w /sbin/apparmor_parser -p x -k apparmor_tools
+-w /usr/sbin/aa-complain -p x -k apparmor_tools
+-w /usr/sbin/aa-disable -p x -k apparmor_tools
+-w /usr/sbin/aa-enforce -p x -k apparmor_tools
 
 ## special files
 -a entry,always -F arch=b32 -S mknod -S mknodat -k specialfiles
