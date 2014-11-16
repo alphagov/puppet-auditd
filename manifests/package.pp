@@ -14,15 +14,13 @@ class auditd::package {
         default             => 'libaudit1',
       }
     }
-
     redhat: {
       $package = 'audit'
       $package_plugins = 'audispd-plugins'
       $package_lib = 'audit-libs'
     }
-
     default: {
-      fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
+      fail("${::operatingsystem} not supported")
     }
   }
 
