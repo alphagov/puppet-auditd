@@ -153,3 +153,6 @@
 -w /sbin/poweroff -p x -k power
 -w /sbin/reboot -p x -k power
 -w /sbin/halt -p x -k power
+
+## Monitor admins accessing user files.
+-a always,exit -F dir=/home/ -F uid=0 -C auid!=obj_uid -k admin_user_home
