@@ -6,13 +6,13 @@
 class auditd::package {
   case $::osfamily {
     debian: {
-      $package => 'auditd'
+      $package = 'auditd'
       $package_plugins = 'audispd-plugins'
       $package_lib = 'libaudit1'
     }
 
     redhat: {
-      $package => 'audit'
+      $package = 'audit'
       $package_plugins = 'audispd-plugins'
       $package_lib = 'audit-libs'
     }
