@@ -178,3 +178,6 @@
 
 ## Monitor admins accessing user files.
 -a always,exit -F dir=/home/ -F uid=0 -C auid!=obj_uid -k admin_user_home
+
+## Monitor changes and executions in /tmp.
+-w /tmp/ -p wxa -k tmp
