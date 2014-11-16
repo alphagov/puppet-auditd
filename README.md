@@ -33,6 +33,7 @@ following keys:-
     hostname                sethostname
     hosts                   /etc/hosts
     init                    /etc/inittab, /etc/init.d/, /etc/init/
+    ipsec                   IPsec configuration.
     libpath                 /etc/ld.so.conf
     localtime               /etc/localtime
     login                   /etc/login.defs, /etc/securetty, /var/log/faillog, /var/log/lastlog, /var/log/tallylog
