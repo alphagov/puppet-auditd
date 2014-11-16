@@ -132,6 +132,10 @@
 -w /etc/ipsec.d/ -p wa -k ipsec
 -w /etc/ipsec.secrets -p wa -k ipsec
 
+## Changes to strongSwan configuration.
+-w /etc/strongswan.conf -p wa -k strongswan
+-w /etc/strongswan.d/ -p wa -k strongswan
+
 ## this was to noisy currently.
 ## log all commands executed by an effective id of 0 aka root.
 ## -a exit,always -F arch=b64 -F euid=0 -S execve -k rootcmd

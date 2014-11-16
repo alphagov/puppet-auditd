@@ -50,6 +50,7 @@ following keys:-
     rootcmd                 all root commands
     specialfiles            mknod mknodat
     sshd                    /etc/ssh/sshd_config
+    strongswan              strongSwan configuration files.
     stunnel                 stunnel
     sysctl                  /etc/sysctl.conf
     time                    adjtimex, settimeofday, clock_settime
