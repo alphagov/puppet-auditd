@@ -8,7 +8,10 @@ class auditd::package {
     debian: {
       $package = 'auditd'
       $package_plugins = 'audispd-plugins'
-      $package_lib = 'libaudit1'
+      $package_lib = $::lsbdistcodename ? {
+        /^lucid$|^precise$/ => 'libaudit0',
+        'trusty'            => 'libaudit1',
+        default             => 'libaudit1',
     }
 
     redhat: {
