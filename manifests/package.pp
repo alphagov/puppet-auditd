@@ -10,6 +10,7 @@ class auditd::package {
       $package_plugins = 'audispd-plugins'
       $package_lib = $::lsbdistcodename ? {
         /^lucid$|^precise$/ => 'libaudit0',
+        'wheezy'            => 'libaudit0',
         'trusty'            => 'libaudit1',
         default             => 'libaudit1',
       }

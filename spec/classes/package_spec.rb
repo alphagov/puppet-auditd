@@ -37,6 +37,16 @@ describe 'auditd::package' do
     it { should contain_package('audispd-plugins') }
   end
 
+  context "debian wheezy" do
+    let (:facts) {{
+        :osfamily => 'debian',
+        :lsbdistcodename => 'wheezy',
+    }}
+    it { should contain_package('auditd') }
+    it { should contain_package('libaudit0') }
+    it { should contain_package('audispd-plugins') }
+  end
+
   context "redhat rhel" do
     let (:facts) {{
         :osfamily => 'redhat',
