@@ -10,26 +10,37 @@ describe 'auditd::package' do
   end
 
   context "ubuntu lucid" do
-    let (:facts) {{ :lsbdistcodename => 'lucid' }}
+    let (:facts) {{
+        :osfamily => 'debian',
+        :lsbdistcodename => 'lucid',
+    }}
     it { should contain_package('auditd') }
     it { should contain_package('libaudit0') }
     it { should contain_package('audispd-plugins') }
   end
   context "ubuntu precise" do
-    let (:facts) {{ :lsbdistcodename => 'precise' }}
+    let (:facts) {{
+        :osfamily => 'debian',
+        :lsbdistcodename => 'precise',
+    }}
     it { should contain_package('auditd') }
     it { should contain_package('libaudit0') }
     it { should contain_package('audispd-plugins') }
   end
   context "ubuntu trusty" do
-    let (:facts) {{ :lsbdistcodename => 'trusty' }}
+    let (:facts) {{
+        :osfamily => 'debian',
+        :lsbdistcodename => 'trusty',
+    }}
     it { should contain_package('auditd') }
     it { should contain_package('libaudit1') }
     it { should contain_package('audispd-plugins') }
   end
 
   context "redhat rhel" do
-    let (:facts) {{ :operatingsystem => 'redhat' }}
+    let (:facts) {{
+        :osfamily => 'redhat',
+    }}
     it { should contain_package('audit') }
     it { should contain_package('audit-libs') }
     it { should contain_package('audispd-plugins') }
