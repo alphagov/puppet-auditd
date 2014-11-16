@@ -12,6 +12,7 @@ class auditd::package {
         /^lucid$|^precise$/ => 'libaudit0',
         'trusty'            => 'libaudit1',
         default             => 'libaudit1',
+      }
     }
 
     redhat: {
