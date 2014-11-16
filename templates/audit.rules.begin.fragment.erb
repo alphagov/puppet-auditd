@@ -117,6 +117,9 @@
 -w /etc/modprobe.d/ -p wa -k modprobe
 -w /etc/modules -p wa -k modprobe
 
+# Module manipulations.
+-a always,exit -S init_module -S delete_module -k modules
+
 ## pam configuration
 -w /etc/pam.d/ -p wa -k pam
 -w /etc/security/limits.conf -p wa  -k pam
