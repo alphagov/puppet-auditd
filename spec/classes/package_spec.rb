@@ -15,7 +15,6 @@ describe 'auditd::package' do
         :lsbdistcodename => 'lucid',
     }}
     it { should contain_package('auditd') }
-    it { should contain_package('libaudit0') }
     it { should contain_package('audispd-plugins') }
   end
   context "ubuntu precise" do
@@ -24,7 +23,6 @@ describe 'auditd::package' do
         :lsbdistcodename => 'precise',
     }}
     it { should contain_package('auditd') }
-    it { should contain_package('libaudit0') }
     it { should contain_package('audispd-plugins') }
   end
   context "ubuntu trusty" do
@@ -33,7 +31,6 @@ describe 'auditd::package' do
         :lsbdistcodename => 'trusty',
     }}
     it { should contain_package('auditd') }
-    it { should contain_package('libaudit1') }
     it { should contain_package('audispd-plugins') }
   end
 
@@ -43,7 +40,6 @@ describe 'auditd::package' do
         :lsbdistcodename => 'wheezy',
     }}
     it { should contain_package('auditd') }
-    it { should contain_package('libaudit0') }
     it { should contain_package('audispd-plugins') }
   end
   context "debian jessie" do
@@ -52,7 +48,6 @@ describe 'auditd::package' do
         :lsbdistcodename => 'jessie',
     }}
     it { should contain_package('auditd') }
-    it { should contain_package('libaudit1') }
     it { should contain_package('audispd-plugins') }
   end
 
@@ -61,7 +56,6 @@ describe 'auditd::package' do
         :osfamily => 'redhat',
     }}
     it { should contain_package('audit') }
-    it { should contain_package('audit-libs') }
     it { should contain_package('audispd-plugins') }
   end
 end

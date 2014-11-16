@@ -5,35 +5,16 @@
 
 class auditd::package {
   case $::osfamily {
-    debian: {
-      $package = 'auditd'
-      $package_plugins = 'audispd-plugins'
-      $package_lib = $::lsbdistcodename ? {
-        /^lucid$|^precise$/ => 'libaudit0',
-        'wheezy'            => 'libaudit0',
-        'trusty'            => 'libaudit1',
-        default             => 'libaudit1',
-      }
-    }
-    redhat: {
-      $package = 'audit'
-      $package_plugins = 'audispd-plugins'
-      $package_lib = 'audit-libs'
-    }
-    default: {
-      fail("${::operatingsystem} not supported")
-    }
+    debian: { $package = 'auditd' }
+    redhat: { $package = 'audit' }
+    default: { fail("${::operatingsystem} not supported") }
   }
 
   package { $package:
     ensure => installed
   }
 
-  package { $package_plugins:
-    ensure => installed
-  }
-
-  package { $package_lib:
+  package { 'audispd-plugins':
     ensure => installed
   }
 }
