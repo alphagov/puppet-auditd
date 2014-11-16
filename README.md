@@ -38,6 +38,7 @@ following keys:-
     login                   /etc/login.defs, /etc/securetty, /var/log/faillog, /var/log/lastlog, /var/log/tallylog
     mail                    /etc/aliases, /etc/postfix/
     modprobe                /etc/modprobe.conf, /etc/modprobe.d/, /etc/modules
+    modules                 Module loading and unloading
     mount                   mount and umount
     network                 /etc/networks/
     opasswd                 /etc/security/opasswd
