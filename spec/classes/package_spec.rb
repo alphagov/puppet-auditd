@@ -8,6 +8,7 @@ describe 'auditd::package' do
     }}
     it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
   end
+
   context "ubuntu lucid" do
     let (:facts) {{ :lsbdistcodename => 'lucid' }}
     it { should contain_package('auditd') }
@@ -24,6 +25,13 @@ describe 'auditd::package' do
     let (:facts) {{ :lsbdistcodename => 'trusty' }}
     it { should contain_package('auditd') }
     it { should contain_package('libaudit1') }
+    it { should contain_package('audispd-plugins') }
+  end
+
+  context "redhat rhel" do
+    let (:facts) {{ :operatingsystem => 'redhat' }}
+    it { should contain_package('audit') }
+    it { should contain_package('audit-libs') }
     it { should contain_package('audispd-plugins') }
   end
 end
