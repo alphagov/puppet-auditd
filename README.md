@@ -52,6 +52,7 @@ following keys:-
     stunnel                 stunnel
     sysctl                  /etc/sysctl.conf
     time                    adjtimex, settimeofday, clock_settime
+    tmp                     /tmp/
     unauthedfileaccess      /etc/, /bin/, /sbin/, /usr/bin/, /usr/sbin/, /var/, /home/, /data/, /srv/
     user_modifcation        /usr/sbin/useradd, /usr/sbin/usermod, /usr/sbin/adduser
 
