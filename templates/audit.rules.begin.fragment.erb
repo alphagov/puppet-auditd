@@ -64,7 +64,7 @@
 -w /etc/cron.monthly/ -p wa -k cron
 -w /etc/cron.weekly/ -p wa -k cron
 -w /etc/crontab -p wa -k cron
--w /var/spool/cron/crontabs/ -k cron 
+-w /var/spool/cron/crontabs/ -k cron
 
 ## user, group, password databases
 -w /etc/group -p wa -k etcgroup
@@ -167,7 +167,6 @@
 -a exit,always -F arch=b64 -S open -F dir=/usr/sbin -F success=0 -k unauthedfileaccess
 -a exit,always -F arch=b64 -S open -F dir=/var -F success=0 -k unauthedfileaccess
 -a exit,always -F arch=b64 -S open -F dir=/home -F success=0 -k unauthedfileaccess
--a exit,always -F arch=b64 -S open -F dir=/data -F success=0 -k unauthedfileaccess
 -a exit,always -F arch=b64 -S open -F dir=/srv -F success=0 -k unauthedfileaccess
 -a exit,always -F arch=b64 -S open -F dir=/tmp -F success=0 -k unauthedfileaccess
 
