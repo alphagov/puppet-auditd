@@ -39,9 +39,9 @@ class auditd::config(
   $rules_file = '/etc/audit/audit.rules'
 
   concat { $rules_file:
-    mode    => '0600',
-    owner   => 'root',
-    group   => 'root',
+    mode  => '0600',
+    owner => 'root',
+    group => 'root',
   }
 
   concat::fragment{ 'auditd_rules_begin':
@@ -64,11 +64,11 @@ class auditd::config(
     group   => 'root',
   }
   file { '/etc/audisp/plugins.d/syslog.conf':
-    ensure  => file,
-    source  => 'puppet:///modules/auditd/etc/audisp/plugins.d/syslog.conf',
-    mode    => '0640',
-    owner   => 'root',
-    group   => 'root',
+    ensure => file,
+    source => 'puppet:///modules/auditd/etc/audisp/plugins.d/syslog.conf',
+    mode   => '0640',
+    owner  => 'root',
+    group  => 'root',
   }
   file { '/sbin/audispd':
     mode  => '0750',
