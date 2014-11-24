@@ -22,6 +22,8 @@ following keys:-
 
     KEY                     Usage
     -----------------------------------------------------------------------
+    apparmor                /etc/apparmor/, /etc/apparmor.d/
+    apparmor_tools          AppArmor tools.
     auditconfig             audit the audit config /etc/audit/, /etc/libaudit.conf, /etc/audisp/
     auditlog                audit the audit logs
     audit_tools             auditctl, auditd
