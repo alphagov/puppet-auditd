@@ -35,6 +35,7 @@ following keys:-
     hostname                sethostname
     hosts                   /etc/hosts
     init                    /etc/inittab, /etc/init.d/, /etc/init/
+    ipsec                   IPsec configuration.
     libpath                 /etc/ld.so.conf
     localtime               /etc/localtime
     login                   /etc/login.defs, /etc/securetty, /var/log/faillog, /var/log/lastlog, /var/log/tallylog
@@ -51,6 +52,7 @@ following keys:-
     rootcmd                 all root commands
     specialfiles            mknod mknodat
     sshd                    /etc/ssh/sshd_config
+    strongswan              strongSwan configuration files.
     stunnel                 stunnel
     sysctl                  /etc/sysctl.conf
     time                    adjtimex, settimeofday, clock_settime
