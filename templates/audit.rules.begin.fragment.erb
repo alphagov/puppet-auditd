@@ -40,17 +40,17 @@
 -w /usr/sbin/aa-enforce -p x -k apparmor_tools
 
 ## special files
--a entry,always -F arch=b32 -S mknod -S mknodat -k specialfiles
--a entry,always -F arch=b64 -S mknod -S mknodat -k specialfiles
+-a always,exit -F arch=b32 -S mknod -S mknodat -k specialfiles
+-a always,exit -F arch=b64 -S mknod -S mknodat -k specialfiles
 
 ## Mount operations
--a entry,always -F arch=b32 -S mount -S umount -S umount2 -k mount
--a entry,always -F arch=b64 -S mount -S umount2 -k mount 
+-a always,exit -F arch=b32 -S mount -S umount -S umount2 -k mount
+-a always,exit -F arch=b64 -S mount -S umount2 -k mount 
 
 ## changes to the time
 ##
--a entry,always -F arch=b32 -S adjtimex -S settimeofday -S clock_settime -k time
--a entry,always -F arch=b64 -S adjtimex -S settimeofday -S clock_settime -k time
+-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S clock_settime -k time
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime -k time
 
 ## Use stunnel
 -w /usr/sbin/stunnel -p x -k stunnel
