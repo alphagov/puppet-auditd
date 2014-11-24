@@ -1,3 +1,14 @@
+2014-11-24 Release 0.3.0 - various fixes by https://github.com/jpds
+- Watch apparmor config
+- Watch access to /home by admins
+- Watch ipsec config
+- Watch strongswan config
+- Watch modules loading and unloading
+- Watch files and execution in /tmp
+- Watch timezone changes
+- Entry rules deprecated in favour of exit rules
+- Removed /data from default watch list
+
 2014-5-20 Release 0.2.0
 - Support versions of Ubuntu greater than 12.04
 
