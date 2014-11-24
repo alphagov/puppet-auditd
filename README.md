@@ -22,6 +22,7 @@ following keys:-
 
     KEY                     Usage
     -----------------------------------------------------------------------
+    admin_user_home         Access to /home files by admins.
     auditconfig             audit the audit config /etc/audit/, /etc/libaudit.conf, /etc/audisp/
     auditlog                audit the audit logs
     audit_tools             auditctl, auditd
