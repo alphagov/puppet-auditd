@@ -7,10 +7,6 @@ class auditd (
   $halt_machine_on_audit_failure = false,
 ) {
 
-  if ($::osfamily != 'Debian') {
-    fail("${::operatingsystem} not supported")
-  }
-
   anchor { 'auditd::begin': } ->
   class { 'auditd::package': } ->
   class { 'auditd::config':

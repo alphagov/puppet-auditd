@@ -2,19 +2,18 @@
 #
 #  This class shouldn't be called directly
 #
+
 class auditd::package {
-  package { 'auditd':
+  case $::osfamily {
+    debian: { $package = 'auditd' }
+    redhat: { $package = 'audit' }
+    default: { fail("${::operatingsystem} not supported") }
+  }
+
+  package { $package:
     ensure => installed
   }
 
-  $pkgname = $::lsbdistcodename ? {
-    /^lucid$|^precise$/ => 'libaudit0',
-    'trusty'            => 'libaudit1',
-    default             => 'libaudit1',
-  }
-  package { $pkgname:
-    ensure => installed
-  }
   package { 'audispd-plugins':
     ensure => installed
   }
