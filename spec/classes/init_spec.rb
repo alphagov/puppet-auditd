@@ -25,7 +25,7 @@ describe 'auditd' do
         :concat_basedir  => '/var/lib/puppet/concat',
       }}
 
-      it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+      it { should raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end

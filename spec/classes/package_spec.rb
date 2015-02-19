@@ -6,7 +6,7 @@ describe 'auditd::package' do
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
     }}
-    it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+    it { should raise_error(Puppet::Error, /Nexenta not supported/) }
   end
 
   context "ubuntu lucid" do
