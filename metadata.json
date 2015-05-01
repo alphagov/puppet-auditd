@@ -1,0 +1,13 @@
+{
+  "name": "gdsoperations-auditd",
+  "version": "0.3.0",
+  "author": "Government Digital Service",
+  "license": "MIT",
+  "summary": "Manage auditd for Ubuntu",
+  "source": "https://github.com/gds-operations/puppet-auditd",
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.0.0" },
+    { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 <=1.2.1" }
+  ],
+  "project_page": "https://github.com/gds-operations/puppet-auditd"
+}
