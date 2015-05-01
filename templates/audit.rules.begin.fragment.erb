@@ -39,6 +39,14 @@
 -w /usr/sbin/aa-disable -p x -k apparmor_tools
 -w /usr/sbin/aa-enforce -p x -k apparmor_tools
 
+## Monitor systemd configuration changes
+-w /etc/systemd/ -p wa -k systemd
+-w /lib/systemd/ -p wa -k systemd
+
+## Monitor usage of systemd tools
+-w /bin/systemctl -p x -k systemd_tools
+-w /bin/journalctl -p x -k systemd_tools
+
 ## special files
 -a always,exit -F arch=b32 -S mknod -S mknodat -k specialfiles
 -a always,exit -F arch=b64 -S mknod -S mknodat -k specialfiles
