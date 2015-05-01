@@ -39,6 +39,14 @@
 -w /usr/sbin/aa-disable -p x -k apparmor_tools
 -w /usr/sbin/aa-enforce -p x -k apparmor_tools
 
+## Monitor systemd configuration changes
+-w /etc/systemd/ -p wa -k systemd
+-w /lib/systemd/ -p wa -k systemd
+
+## Monitor usage of systemd tools
+-w /bin/systemctl -p x -k systemd_tools
+-w /bin/journalctl -p x -k systemd_tools
+
 ## special files
 -a always,exit -F arch=b32 -S mknod -S mknodat -k specialfiles
 -a always,exit -F arch=b64 -S mknod -S mknodat -k specialfiles
@@ -184,5 +192,6 @@
 ## Monitor admins accessing user files.
 -a always,exit -F dir=/home/ -F uid=0 -C auid!=obj_uid -k admin_user_home
 
-## Monitor changes and executions in /tmp.
+## Monitor changes and executions in /tmp and /var/tmp.
 -w /tmp/ -p wxa -k tmp
+-w /var/tmp/ -p wxa -k tmp
