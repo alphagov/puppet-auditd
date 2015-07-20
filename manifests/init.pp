@@ -28,6 +28,12 @@ class auditd (
   $tcp_client_max_idle     = $::auditd::params::tcp_client_max_idle,
   $enable_krb5             = $::auditd::params::enable_krb5,
   $krb5_principal          = $::auditd::params::krb5_principal,
+  $service_name            = $::auditd::params::service_name,
+  $service_ensure          = $::auditd::params::service_ensure,
+  $service_enable          = $::auditd::params::service_enable,
+  $service_hasrestart      = $::auditd::params::service_hasrestart,
+  $service_hasstatus       = $::auditd::params::service_hasstatus,
+  $service_restart_command = $::auditd::params::service_restart_command,
 ) inherits auditd::params {
 
   anchor { 'auditd::begin': } ->

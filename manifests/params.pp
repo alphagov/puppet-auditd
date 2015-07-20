@@ -24,4 +24,10 @@ class auditd::params {
   $tcp_client_max_idle     = '0'
   $enable_krb5             = 'no'
   $krb5_principal          = 'auditd'
+  $service_name            = 'auditd'
+  $service_ensure          = 'running'
+  $service_enable          = true
+  $service_hasstatus       = true
+  $service_hasrestart      = false
+  $service_restart_command = '/usr/sbin/service auditd restart'
 }
