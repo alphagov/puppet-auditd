@@ -1,3 +1,7 @@
+# == Class: auditd::params
+#
+# This class shouldn't be called directly
+#
 class auditd::params {
   $immutable               = true
   $halt                    = false
