@@ -33,6 +33,6 @@ class auditd::params {
   $service_ensure          = 'running'
   $service_enable          = true
   $service_hasstatus       = true
-  $service_hasrestart      = false
-  $service_restart_command = '/usr/sbin/service auditd restart'
+  $service_hasrestart      = true
+  $service_restart_command = undef
 }
