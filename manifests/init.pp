@@ -5,7 +5,7 @@
 class auditd (
   $rules_file              = $::auditd::params::rules_file,
   $immutable               = $::auditd::params::immutable,
-  $halt                    = $::auditd::params::halt,
+  $failure_mode            = $::auditd::params::failure_mode,
   $log_file                = $::auditd::params::log_file,
   $log_format              = $::auditd::params::log_format,
   $log_group               = $::auditd::params::log_group,

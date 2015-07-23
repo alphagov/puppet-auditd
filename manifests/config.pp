@@ -5,7 +5,7 @@
 class auditd::config (
   $rules_file              = $::auditd::rules_file,
   $immutable               = $::auditd::immutable,
-  $halt                    = $::auditd::halt,
+  $failure_mode            = $::auditd::failure_mode,
   $log_file                = $::auditd::log_file,
   $log_format              = $::auditd::log_format,
   $log_group               = $::auditd::log_group,
@@ -30,12 +30,6 @@ class auditd::config (
   $enable_krb5             = $::auditd::enable_krb5,
   $krb5_principal          = $::auditd::krb5_principal,
 ) inherits auditd {
-
-  if $halt {
-    $failure_mode = 2
-  } else {
-    $failure_mode = 1
-  }
 
   concat { $rules_file:
     mode  => '0600',

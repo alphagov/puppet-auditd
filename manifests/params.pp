@@ -5,7 +5,7 @@
 class auditd::params {
   $rules_file              = '/etc/audit/audit.rules'
   $immutable               = true
-  $halt                    = false
+  $failure_mode            = '1'
   $log_file                = '/var/log/audit/audit.log'
   $log_format              = 'RAW'
   $log_group               = 'root'
