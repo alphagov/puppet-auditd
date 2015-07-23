@@ -3,6 +3,7 @@
 #  This class shouldn't be called directly
 #
 class auditd::config (
+  $rules_file              = $::auditd::rules_file,
   $immutable               = $::auditd::immutable,
   $halt                    = $::auditd::halt,
   $log_file                = $::auditd::log_file,
@@ -35,8 +36,6 @@ class auditd::config (
   } else {
     $failure_mode = 1
   }
-
-  $rules_file = '/etc/audit/audit.rules'
 
   concat { $rules_file:
     mode  => '0600',

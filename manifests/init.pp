@@ -3,6 +3,7 @@
 # Sets up auditd with a set of rules.
 #
 class auditd (
+  $rules_file              = $::auditd::params::rules_file,
   $immutable               = $::auditd::params::immutable,
   $halt                    = $::auditd::params::halt,
   $log_file                = $::auditd::params::log_file,

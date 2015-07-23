@@ -3,6 +3,7 @@
 # This class shouldn't be called directly
 #
 class auditd::params {
+  $rules_file              = '/etc/audit/audit.rules'
   $immutable               = true
   $halt                    = false
   $log_file                = '/var/log/audit/audit.log'
