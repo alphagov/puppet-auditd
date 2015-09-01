@@ -5,6 +5,18 @@
   "license": "MIT",
   "summary": "Manage auditd for Ubuntu",
   "source": "https://github.com/gds-operations/puppet-auditd",
+  "operatingsystem_support": [
+    {
+    "operatingsystem": "RedHat"
+    },
+    {
+    "operatingsystem": "Ubuntu",
+    "operatingsystemrelease": [ "12.04", "14.04" ]
+    },
+    {
+    "operatingsystem": "Debian"
+    }
+  ],
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">=3.0.0" },
     { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 <=1.2.1" }
