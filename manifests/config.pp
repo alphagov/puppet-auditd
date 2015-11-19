@@ -44,6 +44,16 @@ class auditd::config(
     group => 'root',
   }
 
+  if $::operatingsystem == 'Ubuntu' and
+      versioncmp($::operatingsystemrelease, '14.04') >= 0 {
+    $interfieldcomp = true
+  } elsif ($::operatingsystem == 'RedHat' or $::operatingsystem == 'Centos') and
+          versioncmp($::operatingsystemrelease, '6.3') >= 0 {
+    $interfieldcomp = true
+  } else {
+    $interfieldcomp = false
+  }
+
   concat::fragment{ 'auditd_rules_begin':
     target  => $rules_file,
     content => template('auditd/audit.rules.begin.fragment.erb'),
