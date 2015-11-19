@@ -136,7 +136,7 @@
 -w /etc/security/namespace.init -p wa -k pam
 
 ## Puppet SSL
--w /etc/puppet/ssl -p wa -k puppet_ssl
+-w <%= @auditd_puppet_ssldir %> -p wa -k puppet_ssl
 
 ## postfix configuration
 -w /etc/aliases -p wa -k mail
