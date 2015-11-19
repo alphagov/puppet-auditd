@@ -1,3 +1,7 @@
+2015-11-19 Release 0.3.1 
+- Ensure rules loaded correctly with auditctl < 2.2
+- Ensure rules loaded correctly when /etc/puppet does not exist
+
 2014-11-24 Release 0.3.0 - various fixes by https://github.com/jpds
 - Watch apparmor config
 - Watch access to /home by admins
