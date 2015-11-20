@@ -1,6 +1,6 @@
 {
   "name": "gdsoperations-auditd",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Government Digital Service",
   "license": "MIT",
   "summary": "Manage auditd for Ubuntu",
