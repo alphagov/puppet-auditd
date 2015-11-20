@@ -1,3 +1,9 @@
+2015-11-19 Release 0.4.0
+- No longer apply a default set of rules.
+  Users will have to supply their own using the `auditd::rule` defined type.
+- Provide an example set of rules.
+- Add a security advisory about versions before 0.3.1 to the README
+
 2015-11-19 Release 0.3.1 
 - Ensure rules loaded correctly with auditctl < 2.2
 - Ensure rules loaded correctly when /etc/puppet does not exist
