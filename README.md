@@ -1,3 +1,8 @@
+## Security Notice
+
+Versions prior to 0.3.1 contained a serious bug which could cause audit 
+rules to be silently ignored. Please see [this advisory](https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/?hl=en-GB#!topic/gds-operations-open-source/OsCPf6FDjyY).
+
 # auditd
 
 This module contains configurations for auditd, which helps to write
