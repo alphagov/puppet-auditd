@@ -2,41 +2,34 @@
 #
 #  This class shouldn't be called directly
 #
-class auditd::config(
-  $immutable               = undef,
-  $halt                    = undef,
-  $log_file                = '/var/log/audit/audit.log',
-  $log_format              = 'RAW',
-  $log_group               = 'root',
-  $priority_boost          = '4',
-  $flush                   = 'INCREMENTAL',
-  $freq                    = '20',
-  $num_logs                = '4',
-  $disp_qos                = 'lossy',
-  $dispatcher              = '/sbin/audispd',
-  $name_format             = 'NONE',
-  $max_log_file            = '5 ',
-  $max_log_file_action     = 'ROTATE',
-  $space_left              = '75',
-  $space_left_action       = 'SYSLOG',
-  $action_mail_acct        = 'root',
-  $admin_space_left        = '50',
-  $admin_space_left_action = 'SUSPEND',
-  $disk_full_action        = 'SUSPEND',
-  $disk_error_action       = 'SUSPEND',
-  $tcp_listen_queue        = '5',
-  $tcp_client_max_idle     = '0',
-  $enable_krb5             = 'no',
-  $krb5_principal          = 'auditd',
-) {
-
-  if $halt {
-    $failure_mode = 2
-  } else {
-    $failure_mode = 1
-  }
-
-  $rules_file = '/etc/audit/audit.rules'
+class auditd::config (
+  $rules_file              = $::auditd::rules_file,
+  $immutable               = $::auditd::immutable,
+  $failure_mode            = $::auditd::failure_mode,
+  $log_file                = $::auditd::log_file,
+  $log_format              = $::auditd::log_format,
+  $log_group               = $::auditd::log_group,
+  $priority_boost          = $::auditd::priority_boost,
+  $flush                   = $::auditd::flush,
+  $freq                    = $::auditd::freq,
+  $num_logs                = $::auditd::num_logs,
+  $disp_qos                = $::auditd::disp_qos,
+  $dispatcher              = $::auditd::dispatcher,
+  $name_format             = $::auditd::name_format,
+  $max_log_file            = $::auditd::max_log_file,
+  $max_log_file_action     = $::auditd::max_log_file_action,
+  $space_left              = $::auditd::space_left,
+  $space_left_action       = $::auditd::space_left_action,
+  $action_mail_acct        = $::auditd::action_mail_acct,
+  $admin_space_left        = $::auditd::admin_space_left,
+  $admin_space_left_action = $::auditd::admin_space_left_action,
+  $disk_full_action        = $::auditd::disk_full_action,
+  $disk_error_action       = $::auditd::disk_error_action,
+  $tcp_listen_queue        = $::auditd::tcp_listen_queue,
+  $tcp_client_max_idle     = $::auditd::tcp_client_max_idle,
+  $enable_krb5             = $::auditd::enable_krb5,
+  $krb5_principal          = $::auditd::krb5_principal,
+) inherits auditd {
 
   concat { $rules_file:
     mode  => '0600',
