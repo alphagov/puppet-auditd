@@ -18,6 +18,39 @@ auditd::rule { 'use-of-auditctl':
 }
 ```
 
+## Example hiera usage
+
+### Default parameters:
+```
+classes:
+  - 'auditd'
+```
+### Specific rule file
+
+```
+auditd::rules:
+  'rule01':
+    source: 'puppet:///modules/example/auditd/pci.rules'
+    order: '20'
+```
+### Specific rule content
+```
+auditd::rules:
+  'rule02':
+    content: "examplecontent\n"
+    order: '21'
+```
+### Combinations are also possible
+```
+auditd::rules:
+  'rule01':
+    source: 'puppet:///modules/example/auditd/pci.rules'
+    order: '20'
+  'rule02':
+    content: "examplecontent\n"
+    order: '21'
+```
+
 ## License
 
 See [LICENSE](LICENSE) file.
