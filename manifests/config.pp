@@ -28,6 +28,7 @@ class auditd::config(
   $tcp_client_max_idle     = '0',
   $enable_krb5             = 'no',
   $krb5_principal          = 'auditd',
+  $syslog_output           = 'yes',
 ) {
 
   if $halt {
@@ -73,13 +74,15 @@ class auditd::config(
     owner   => 'root',
     group   => 'root',
   }
+
   file { '/etc/audisp/plugins.d/syslog.conf':
-    ensure => file,
-    source => 'puppet:///modules/auditd/etc/audisp/plugins.d/syslog.conf',
-    mode   => '0640',
-    owner  => 'root',
-    group  => 'root',
+    ensure  => file,
+    content => template('auditd/audisp_syslog_plugin.conf.erb'),
+    mode    => '0640',
+    owner   => 'root',
+    group   => 'root',
   }
+
   file { '/sbin/audispd':
     mode  => '0750',
     owner => 'root',

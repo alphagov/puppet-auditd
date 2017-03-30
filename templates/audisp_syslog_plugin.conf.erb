@@ -3,7 +3,7 @@
 # syslog plugin. It simply takes events and writes
 # them to syslog.
 
-active = yes
+active = <%= @syslog_output %>
 direction = out
 path = builtin_syslog
 type = builtin
