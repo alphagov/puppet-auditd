@@ -1,0 +1,20 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: puppet_apply
+  require_chef_for_busser: false
+  manifests_path: .
+  modules_path: ../
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    provisioner:
+      manifest: site.pp
