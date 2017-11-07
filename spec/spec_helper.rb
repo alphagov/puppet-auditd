@@ -5,6 +5,7 @@ RSpec.configure do |c|
   c.default_facts = {
     :operatingsystem        => 'Ubuntu',
     :operatingsystemrelease => 'trusty',
+    :osfamily               => 'Debian',
     :lsbmajdistrelease      => 14,
   }
 
