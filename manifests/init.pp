@@ -7,14 +7,14 @@ class auditd (
   $halt_machine_on_audit_failure = false,
 ) {
 
-  anchor { 'auditd::begin': } ->
-  class { 'auditd::package': } ->
-  class { 'auditd::config':
+  anchor { 'auditd::begin': }
+  -> class { 'auditd::package': }
+  -> class { 'auditd::config':
     immutable => $immutable,
     halt      => $halt_machine_on_audit_failure,
   }
-  class { 'auditd::service': } ->
-  anchor { 'auditd::end': }
+  class { 'auditd::service': }
+  -> anchor { 'auditd::end': }
 
   Anchor['auditd::begin']  ~> Class['auditd::service']
   Class['auditd::package'] ~> Class['auditd::service']
