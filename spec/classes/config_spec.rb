@@ -2,7 +2,10 @@ require 'spec_helper'
 
 describe 'auditd::config' do
 
-  let(:facts) {{ :concat_basedir => '/var/lib/puppet/concat/'}}
+  let(:facts) {{
+    :concat_basedir => '/var/lib/puppet/concat/',
+    :operatingsystemrelease => '14.04,'
+  }}
 
   it { 
     should contain_file('/etc/audit/audit.rules').with(
@@ -35,4 +38,16 @@ describe 'auditd::config' do
       :group => 'root'
     )
   }
+  let(:facts) {{
+    :concat_basedir => '/var/lib/puppet/concat/',
+    :operatingsystemrelease => '16.04,'
+  }}
+  it {
+    should contain_file('/etc/audit/rules.d/base.rules').with(
+      :mode  => '0600',
+      :owner => 'root',
+      :group => 'root'
+    )
+  }
+
 end
