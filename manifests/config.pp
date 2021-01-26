@@ -37,8 +37,13 @@ class auditd::config(
     $failure_mode = 1
   }
 
-  $rules_file = '/etc/audit/audit.rules'
-
+  if $::operatingsystem == 'Ubuntu' and
+    versioncmp($::operatingsystemrelease, '14.10') >= 0 {
+    # More recent Ubuntu builds the rules from a rules.d folder
+    $rules_file = '/etc/audit/rules.d/base.rules'
+  } else {
+    $rules_file = '/etc/audit/audit.rules'
+  }
   concat { $rules_file:
     mode  => '0600',
     owner => 'root',
